@@ -29,7 +29,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         
         twoRouteButton.isHidden = true
-        directionButton.isHidden = false
+        directionButton.isHidden = true
         zoomIn.isHidden = true
         zoomOut.isHidden = true
         map.isZoomEnabled = false
@@ -56,7 +56,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     //Draw Polylines Routes for 3 points
     @IBAction func drawRoute(sender: UIButton) {
         map.removeOverlays(map.overlays)
-        remoteDistanceLabel()
+        distanceLabel()
         
         var nextIndex = 0
         for index in 0...2 {
@@ -122,7 +122,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     // To Display route between two annotation
     @IBAction func drawMarkerRoute(sender: UIButton) {
         map.removeOverlays(map.overlays)
-        remoteDistanceLabel()
+        distanceLabel()
         
         var nextIndex = 0
         for index in 0...1 {
@@ -267,7 +267,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     //Remove Overlays
     func removeOverlays() {
         directionButton.isHidden = true
-        remoteDistanceLabel()
+        distanceLabel()
         
         for polygon in map.overlays {
             map.removeOverlay(polygon)
@@ -275,7 +275,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     
-    private func remoteDistanceLabel() {
+    private func distanceLabel() {
         for label in distanceLabels {
             label.removeFromSuperview()
         }
