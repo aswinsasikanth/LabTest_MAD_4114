@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A1_A2_iOS__Aswini_Sasi_Kanth_C0880827" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3X-fW-Yyr">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scl-lj-ns8">
+                                <rect key="frame" x="130" y="749" width="213" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="DIRECTION BUTTON"/>
+                                <connections>
+                                    <action selector="drawRouteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OO3-8a-TdD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uI-gU-Mpm">
+                                <rect key="frame" x="30" y="89" width="163" height="32"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Two Point Direction"/>
+                                <connections>
+                                    <action selector="drawMarkerRouteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cBe-N3-da7"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-jU-GHM">
+                                <rect key="frame" x="15" y="571" width="98" height="87"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-lg-SIp">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="33.666666666666664"/>
+                                        <color key="backgroundColor" red="0.63976988040000005" green="0.66666668650000005" blue="0.65291168700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="ZoomIn">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="zoomButton:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="0pl-2f-6aF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPs-bb-8fH">
+                                        <rect key="frame" x="0.0" y="52.666666666666629" width="98" height="34.333333333333343"/>
+                                        <color key="backgroundColor" red="0.63976988040000005" green="0.66666668650000005" blue="0.65291168700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="ZoomOut">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="zoomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TTc-aD-lu7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="scl-lj-ns8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="690" id="9vH-jp-7pY"/>
+                            <constraint firstItem="hbE-jU-GHM" firstAttribute="top" secondItem="3uI-gU-Mpm" secondAttribute="bottom" constant="450" id="Cxt-2n-Df9"/>
+                            <constraint firstItem="3uI-gU-Mpm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Dbz-hS-JpC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N3X-fW-Yyr" secondAttribute="trailing" id="Jc2-pg-RdR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3uI-gU-Mpm" secondAttribute="trailing" constant="180" id="MUY-RK-Cr7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N3X-fW-Yyr" secondAttribute="bottom" id="Rfr-i6-GjW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="scl-lj-ns8" secondAttribute="trailing" constant="50" id="T18-J0-usQ"/>
+                            <constraint firstItem="hbE-jU-GHM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="V04-FD-xno"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hbE-jU-GHM" secondAttribute="trailing" constant="280" id="WaN-rB-Yle"/>
+                            <constraint firstItem="3uI-gU-Mpm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="X9R-tF-1KZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hbE-jU-GHM" secondAttribute="bottom" constant="160" id="dTL-j3-MuP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="scl-lj-ns8" secondAttribute="bottom" constant="35" id="hNR-Mm-edN"/>
+                            <constraint firstItem="scl-lj-ns8" firstAttribute="top" secondItem="3uI-gU-Mpm" secondAttribute="bottom" constant="628" id="jlD-DP-iJz"/>
+                            <constraint firstItem="scl-lj-ns8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="oL5-Eg-b9O"/>
+                            <constraint firstItem="N3X-fW-Yyr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ofJ-XI-gUX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3uI-gU-Mpm" secondAttribute="trailing" constant="200" id="u25-Sq-Yy8"/>
+                            <constraint firstItem="N3X-fW-Yyr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uvT-CZ-L6i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="directionButton" destination="scl-lj-ns8" id="F9h-we-Eri"/>
+                        <outlet property="map" destination="N3X-fW-Yyr" id="XCK-fI-3w8"/>
+                        <outlet property="twoRouteButton" destination="3uI-gU-Mpm" id="NBD-lR-X4f"/>
+                        <outlet property="zoomIn" destination="jtg-lg-SIp" id="2Cg-YN-iMq"/>
+                        <outlet property="zoomOut" destination="mPs-bb-8fH" id="Fdx-fX-Rgr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-515.26717557251902" y="-42.253521126760567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
