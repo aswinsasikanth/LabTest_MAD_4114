@@ -29,11 +29,11 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         
         twoRouteButton.isHidden = true
-        directionButton.isHidden = true
+        directionButton.isHidden = false
         zoomIn.isHidden = true
         zoomOut.isHidden = true
         map.isZoomEnabled = false
-        map.showsUserLocation = false
+        map.showsUserLocation = true
         
         
         
